@@ -1,0 +1,85 @@
+
+import java.text.DecimalFormat;
+
+public class PointClass1 {
+//Class member variables
+private double x;
+private double y;
+private double z;
+
+//Parameterised constructor
+public PointClass1(double x, double y, double z ) {
+this.x = x;
+this.y = y;
+this.z = z;
+}
+//For Point2D
+public Point(double x, double y) {
+this.x = x;
+this.y = y;
+this.z = 0;
+}
+//Getters
+public double getX(){
+return x;
+}
+public double getY(){
+return y;
+}
+public double getZ(){
+return z;
+}
+//toString() method
+@Override
+public String toString() {
+return "(" + x + "," + y + "," + z + ")";
+}
+//equals()
+@Override
+public boolean equals(Object obj) {
+if (obj == null) {
+return false;
+}
+if (getClass() != obj.getClass()) {
+return false;
+}
+final Point other = (Point) obj;
+if (Double.doubleToLongBits(this.x) != Double.doubleToLongBits(other.x)) {
+return false;
+}
+if (Double.doubleToLongBits(this.y) != Double.doubleToLongBits(other.y)) {
+return false;
+}
+if (Double.doubleToLongBits(this.z) != Double.doubleToLongBits(other.z)) {
+return false;
+}
+return true;
+}
+//distance()
+public static double distance(Point point1,Point point2){
+double distance;
+distance = Math.sqrt(Math.pow((point2.x - point1.x),2) + Math.pow((point2.y - point1.y),2) + Math.pow((point2.z - point1.z),2));
+return distance;
+}
+
+static DecimalFormat f = new DecimalFormat("#.##");
+public static void main(String[] args){
+
+//Create objects for point class
+Point p1 = new Point(3.0,5.0,-1.0);
+System.out.println("Point P1 : " + p1);
+Point p2 = new Point(6.0,15.0,0.0);
+System.out.println("Point P2 : " + p2);
+//Find distance
+System.out.println("Distance between the two points : " + f.format(distance(p1,p2)));
+
+//Create objects for point class
+Point p3 = new Point(5,4,3);
+System.out.println("\n\nPoint P3: " + p3);
+Point p4 = new Point(2,0.0);
+System.out.println("Point P4: " + p4);
+//Find distance
+System.out.println("Distance between the two points : " + f.format(distance(p3,p4)));
+
+}
+}

@@ -1,0 +1,18 @@
+import java.util.LinkedList;
+
+public class ListStuff {
+  
+  //public static<T> method
+  public static<T> void printList(LinkedList<T> list){
+    for(T x: list){
+      System.out.println(x) 
+    }
+  }
+  
+  //using static <T> method
+  public static void main (String[] args){
+    LinkedList<String> list = new LinkedList<String>(); 
+  }
+  
+  
+}

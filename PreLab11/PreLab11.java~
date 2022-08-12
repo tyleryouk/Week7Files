@@ -1,0 +1,25 @@
+/** Tyler Youk Pre-Lab 11 */
+
+/** Lab 11 will introduce you to reading input from a file and writing data to a file. 
+  * As a warmup, we are going to read input from a String. Look up the StringReader class in the API. 
+  * Create a StringReader object using the string "CSDS132". 
+  * Then, use the read method to read each character, one at a time, from the string. 
+  * Finally, state how you can tell when the last character of the String is read.
+  * You may give an English description or you can enter Java code that does the test. */
+
+import java.io.StringReader;
+
+public class Pre-Lab11 {
+ 
+  public void readIt(String oo){
+     
+  }
+  
+  /** Testing in main method since easy test */
+  public static void main (String[] args){
+    String data = "text to be read";
+    StringReader textToBeRead = new StringReader(data);
+    
+  }
+  
+}
